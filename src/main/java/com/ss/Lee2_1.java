@@ -1,6 +1,6 @@
 package com.ss;
 
-import com.ss.main.ListNode;
+import com.ss.struct.ListNode;
 
 /**
  * @author Senn

@@ -1,7 +1,6 @@
 package com.ss;
 
-import com.ss.main.TreeNode;
-import org.junit.jupiter.api.Test;
+import com.ss.struct.TreeNode;
 
 public class Lee337 {
 

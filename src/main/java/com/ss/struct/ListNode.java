@@ -1,4 +1,4 @@
-package com.ss.main;
+package com.ss.struct;
 
 /**
  * @author Senn
