@@ -1,4 +1,4 @@
-package com.ss;
+package com.ss.leetcode;
 
 import com.ss.struct.TreeNode;
 

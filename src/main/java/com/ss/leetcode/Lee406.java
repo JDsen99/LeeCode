@@ -1,4 +1,4 @@
-package com.ss;
+package com.ss.leetcode;
 
 import jdk.internal.instrumentation.TypeMappings;
 
