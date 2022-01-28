@@ -28,7 +28,7 @@ public class Lee145 {
                 pre = root;
                 root = null;
             } else {
-
+                res.add(root.val);
                 stack.push(root);
                 root = root.right;
             }
