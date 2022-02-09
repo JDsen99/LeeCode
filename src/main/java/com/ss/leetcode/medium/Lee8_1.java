@@ -1,4 +1,4 @@
-package com.ss.leetcode;
+package com.ss.leetcode.medium;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

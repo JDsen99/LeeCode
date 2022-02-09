@@ -1,4 +1,4 @@
-package com.ss.leetcode;
+package com.ss.leetcode.hard;
 
 /**
  * @author Senn
