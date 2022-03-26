@@ -5,37 +5,58 @@ package com.ss.interview;
  * @create 2022/2/20 16:53
  */
 public class QuickSort {
+
+    public static void main(String[] args) {
+        int[] nums = {46,16,53,90,12,10,46};
+        new QuickSort().sortArray(nums);
+        for (int num : nums) {
+            System.out.println(num);
+        }
+    }
+
     public int[] sortArray(int[] nums) {
-        mergeSort(0, nums.length - 1, nums);
+        quickSort1(0, nums.length - 1, nums);
         return nums;
     }
-    private void mergeSort(int left, int right, int[] nums) {
-        //边界判断
+
+    private void quickSort(int left, int right, int[] nums) {
         if (left >= right) return;
-        //中值
-        int mid = left + right >> 1;
-        //左右
-        mergeSort(left, mid, nums);
-        mergeSort(mid + 1, right, nums);
-        //临时数组下标
-        int k = 0;
-        int i = left;
-        //中值 左边
-        int j = mid + 1;
-        //临时数组
-        int[] temp = new int[right - left + 1];
-        //两边合并
-        while (i <= mid && j <= right) {
-            if (nums[i] <= nums[j]) {
-                temp[k++] = nums[i++];
-            }else {
-                temp[k++] = nums[j++];
+        int i = left - 1;
+        int j = right + 1;
+        int x = nums[left + right >> 1];
+        //边界
+        while (i < j) {
+            //寻找 区域不符合的值
+            do i++; while (nums[i] < x);
+            do j--; while (nums[j] > x);
+            //满足条件 则交换
+            if (i < j) {
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
             }
         }
-        //剩余的合并
-        while (i <= mid) temp[k++] = nums[i++];
-        while (j <= right) temp[k++] = nums[j++];
-        //临时数组 更新到 原数组
-        for (i = left, j = 0; i <= right; i++, j++) nums[i] = temp[j];
+        //左侧递归 快排
+        quickSort(left, j, nums);
+        //右侧递归 快排
+        quickSort(j + 1, right, nums);
+    }
+
+    private void quickSort1(int left, int right, int[] nums) {
+        if (left >= right) return;
+        int i = left - 1;
+        int j = right + 1;
+        int x = nums[left + right >> 1];
+        while (i < j) {
+            do i++; while (nums[i] < x);
+            do j--; while (nums[j] > x);
+            if (i < j) {
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+            }
+        }
+        quickSort1(left, j, nums);
+        quickSort1(j + 1, right, nums);
     }
 }

@@ -8,42 +8,39 @@ import com.ss.struct.ListNode;
  */
 public class Lee25_3 {
     public ListNode reverseKGroup(ListNode head, int k) {
-        ListNode temp = new ListNode();
-        temp.next = head;
-        ListNode pre = temp;
-        ListNode end = temp;
-
-        while(end.next != null) {
-            for (int i = 0; i < k && end.next != null; i++) {
+        ListNode pre = new ListNode();
+        pre.next = head;
+        ListNode start = pre;
+        ListNode end = pre;
+        while (end.next != null) {
+            for (int i = 0; i < k && end != null; i++) {
                 end = end.next;
             }
-            if (end.next == null) break;
-
-            ListNode start = pre.next;
+            if (end == null) {
+                break;
+            }
             ListNode next = end.next;
+            ListNode last = start.next;
             end.next = null;
-            pre.next = reverseNode(start);
-            start.next = next;
-            pre = start;
-            end = pre;
+            start.next = reverseNode(last);
+            last.next = next;
+            start = last;
+            end = last;
         }
-        return temp.next;
+        return pre.next;
     }
 
     private ListNode reverseNode(ListNode head) {
-
         if (head == null || head.next == null) return head;
-
-        ListNode preNode = null;
-        ListNode curNode = head;
-        ListNode nextNode = null;
-
-        while (curNode != null) {
-            nextNode = curNode.next;
-            curNode.next = preNode;
-            preNode = curNode;
-            curNode = nextNode;
+        ListNode pre = null;
+        ListNode cur = head;
+        ListNode next = null;
+        while (cur != null) {
+            next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
         }
-        return preNode;
+        return pre;
     }
 }

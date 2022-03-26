@@ -1,8 +1,6 @@
 package com.ss.leetcode.medium;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Senn
@@ -11,6 +9,7 @@ import java.util.List;
 public class Lee15_2 {
 
     public List<List<Integer>> threeSum(int[] nums) {
+        Queue<String> queue = new LinkedList<>();
         List<List<Integer>> ans = new ArrayList<>();
         if (nums == null || nums.length < 3) return ans;
         Arrays.sort(nums);

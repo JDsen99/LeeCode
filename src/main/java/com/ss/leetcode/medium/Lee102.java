@@ -14,7 +14,6 @@ import java.util.Queue;
 public class Lee102 {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
-
         Queue<TreeNode> queue = new ArrayDeque<>();
         if (root != null) {
             queue.add(root);

@@ -1,4 +1,4 @@
-package com.ss.test;
+package com.ss.interview.microsoft;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,8 +1,4 @@
-package com.ss.test;
-
-
-import java.util.LinkedList;
-import java.util.Queue;
+package com.ss.interview.microsoft;
 
 /**
  * @author Senn
