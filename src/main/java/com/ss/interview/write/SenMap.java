@@ -29,7 +29,6 @@ public class SenMap<K, V> {
 
     private int threshold;
 
-
     private static final int MAX_CAPACITY = 1 << 30;
 
     private static final int DEFAULT_CAPACITY = 16;

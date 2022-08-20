@@ -1,7 +1,5 @@
 package com.ss.leetcode.medium;
 
-import jdk.internal.instrumentation.TypeMappings;
-
 import java.util.Arrays;
 import java.util.LinkedList;
 
