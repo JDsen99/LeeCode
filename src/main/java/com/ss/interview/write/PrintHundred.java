@@ -11,20 +11,17 @@ import java.util.concurrent.locks.ReentrantLock;
 public class PrintHundred {
 
     public static void main(String[] args) {
-
-        Singleton instance = Singleton.getInstance();
-
         Resource resource = new Resource();
 
         new Thread(() -> {
-            resource.printNum(resource.condition1,resource.condition2);
+            resource.printNum(resource.condition1, resource.condition2);
         }, "A").start();
         new Thread(() -> {
-            resource.printNum(resource.condition2,resource.condition3);
+            resource.printNum(resource.condition2, resource.condition3);
         }, "B").start();
 
         new Thread(() -> {
-            resource.printNum(resource.condition3,resource.condition1);
+            resource.printNum(resource.condition3, resource.condition1);
         }, "C").start();
     }
 
@@ -38,16 +35,16 @@ public class PrintHundred {
         public void printNum(Condition self, Condition next) {
             lock.lock();
             try {
-                while (num < 99) {
+                while (num < 30) {
                     num += 1;
-                    System.out.println(Thread.currentThread().getName() + " --> " +num);
+                    System.out.print(Thread.currentThread().getName());
                     next.signal();
                     self.await();
                 }
                 next.signal();
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }finally {
+            } finally {
                 lock.unlock();
             }
 

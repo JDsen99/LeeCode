@@ -11,24 +11,24 @@ public class Lee22 {
     public List<String> generateParenthesis(int n) {
         List<String> res = new ArrayList<>();
         if (n == 0) return res;
-        dfs(new StringBuilder(),0,0,n,res);
+        dfs(0, 0, n, new StringBuilder(), res);
         return res;
     }
 
-    private void dfs(StringBuilder stringBuilder, int left, int right, int len,List<String> res) {
-        if (left == len && right == len) {
+    private void dfs(int left, int right, int n, StringBuilder stringBuilder, List<String> res) {
+        if (left == n && right == n) {
             res.add(stringBuilder.toString());
             return;
         }
-        if (left < right) return;
-        if (left < len) {
+        if (right > left) return;
+        if (left < n) {
             stringBuilder.append("(");
-            dfs(stringBuilder,left + 1, right, len, res);
+            dfs(left + 1, right, n, stringBuilder, res);
             stringBuilder.deleteCharAt(stringBuilder.length() - 1);
         }
-        if (right < len) {
+        if (right < n) {
             stringBuilder.append(")");
-            dfs(stringBuilder,left, right + 1, len, res);
+            dfs(left, right + 1, n, stringBuilder, res);
             stringBuilder.deleteCharAt(stringBuilder.length() - 1);
         }
     }

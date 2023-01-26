@@ -20,7 +20,7 @@ public class Lee19_2 {
             end = end.next;
             start = start.next;
         }
-        start = start.next;
+        start.next = start.next.next;
         return pre.next;
     }
 

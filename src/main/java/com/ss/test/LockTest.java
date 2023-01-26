@@ -1,4 +1,4 @@
-package com.ss.interview;
+package com.ss.test;
 
 import java.util.ArrayList;
 import java.util.BitSet;

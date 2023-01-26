@@ -1,6 +1,6 @@
 package com.ss.interview.meituan;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
+
 
 import java.util.Scanner;
 

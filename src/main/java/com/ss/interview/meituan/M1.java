@@ -1,8 +1,5 @@
 package com.ss.interview.meituan;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
-
-import java.util.Map;
 import java.util.Scanner;
 
 /**

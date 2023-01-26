@@ -9,7 +9,7 @@ import com.ss.struct.ListNode;
 public class Lee24 {
 
     public ListNode swapPairs(ListNode head) {
-        if (head == null || head.next == null) return new ListNode();
+        if (head == null || head.next == null) return head;
         ListNode pre = new ListNode();
         pre.next = head;
         ListNode start = pre;

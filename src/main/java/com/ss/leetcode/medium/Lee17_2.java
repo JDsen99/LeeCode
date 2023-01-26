@@ -20,15 +20,22 @@ public class Lee17_2 {
     }
 
     private void dfs(String digits, int index, String str) {
-        if (index == digits.length()) res.add(str);
-
+        if (index == digits.length()) {
+            res.add(str);
+            return;
+        }
         Character c = digits.charAt(index);
         String letters = letterMap[c - '0'];
-
         for (int i = 0; i < letters.length(); i++) {
-            dfs(digits,index++,str + digits.charAt(i));
+            dfs(digits, index + 1, str + letters.charAt(i));
         }
     }
+
+    public static void main(String[] args) {
+        List<String> list = new Lee17_2().letterCombinations("2");
+        Optional.ofNullable(list).ifPresent(l -> l.forEach(s -> System.out.print(s + "\t")));
+    }
+
 
     public List<String> letterCombinations2(String digits) {
         List<String> combinations = new ArrayList<>();  //使用一个集合来存储所有的字母组合结果
