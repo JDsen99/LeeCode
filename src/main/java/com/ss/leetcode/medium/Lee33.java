@@ -7,18 +7,22 @@ package com.ss.leetcode.medium;
 public class Lee33 {
     public int search(int[] nums, int target) {
         int length = nums.length;
-        int res = 0;
+        int res = -1;
         if (target >= nums[0]) {
-            for (int i = 0; i < length - 2; i++) {
+            for (int i = 0; i < length - 1; i++) {
                 if (nums[i] > nums[i + 1]) break;
-                if(target == nums[0]) res = i;
-                if (i == length - 1) res = -1;
+                if(target == nums[0]) {
+                    res = i;
+                    break;
+                }
             }
         }else {
             for (int i = length - 1; i > 0; i--) {
                 if (nums[i] < nums[i - 1]) break;
-                if(target == nums[i]) res = length - i;
-                if (i == 1) res = -1;
+                if(target == nums[0]) {
+                    res = i;
+                    break;
+                }
             }
         }
         return res;

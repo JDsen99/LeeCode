@@ -13,10 +13,12 @@ public class Lee141 {
         if (head == null || head.next == null) return false;
         ListNode slow = head;
         ListNode fast = head.next;
-        while (fast.next != null && slow.next != null) {
+        while (slow.next != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
-            if (slow == fast) return true;
+            if (fast == slow) {
+                return true;
+            }
         }
         return false;
     }
