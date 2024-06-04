@@ -9,13 +9,11 @@ import com.ss.struct.ListNode;
 public class Lee206 {
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) return head;
-        ListNode pre = new ListNode();
-        while (head != null) {
-            ListNode next = head.next;
-            head.next = pre.next;
-            pre.next = head;
-            head = next;
-        }
-        return pre.next;
+
+        ListNode newHead = reverseList(head.next);
+
+        head.next.next = head;
+        head.next = null;
+        return newHead;
     }
 }
