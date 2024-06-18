@@ -15,7 +15,7 @@ public class T1 {
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] != arr[i - 1]) {
                 dp[i] += dp[i - 1];
-            }
+        }
             res += dp[i];
         }
         System.out.println(res);

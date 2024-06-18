@@ -1,4 +1,4 @@
-package com.ss.interview.sort;
+package com.ss.write.sort;
 
 /**
  * @author Senn

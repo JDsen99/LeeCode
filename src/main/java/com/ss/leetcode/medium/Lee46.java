@@ -10,16 +10,17 @@ import java.util.List;
 public class Lee46 {
     List<List<Integer>> res;
     int[] nums;
+
     public List<List<Integer>> permute(int[] nums) {
         res = new ArrayList<>();
         this.nums = nums;
-        dfs(new  boolean[nums.length],new ArrayList<>());
+        dfs(new boolean[nums.length], new ArrayList<>());
         return res;
     }
 
     private void dfs(boolean[] used, ArrayList<Integer> list) {
 
-        if(list.size() == nums.length) {
+        if (list.size() == nums.length) {
             res.add(new ArrayList<Integer>(list));
             return;
         }
@@ -28,7 +29,7 @@ public class Lee46 {
             if (!used[i]) {
                 list.add(nums[i]);
                 used[i] = true;
-                dfs(used,list);
+                dfs(used, list);
                 used[i] = false;
                 list.remove(list.size() - 1);
             }

@@ -2,6 +2,7 @@ package com.ss.leetcode.hard;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -50,12 +51,15 @@ public class Lee32_3 {
         if (s == null || s.length() == 0) return 0;
         int res = 0;
         Stack<Integer> stack = new Stack<>();
+        stack.push(-1);
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '(') stack.push(i);
-            else {
+            if (s.charAt(i) == '(') {
+                stack.push(i);
+            } else {
                 stack.pop();
-                if (stack.isEmpty()) stack.push(i);
-                else {
+                if (stack.isEmpty()) {
+                    stack.push(i);
+                } else {
                     res = Math.max(res,i - stack.peek());
                 }
             }

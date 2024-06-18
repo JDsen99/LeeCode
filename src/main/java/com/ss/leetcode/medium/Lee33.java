@@ -11,7 +11,7 @@ public class Lee33 {
         if (target >= nums[0]) {
             for (int i = 0; i < length - 1; i++) {
                 if (nums[i] > nums[i + 1]) break;
-                if(target == nums[0]) {
+                if(target == nums[i]) {
                     res = i;
                     break;
                 }
@@ -19,7 +19,7 @@ public class Lee33 {
         }else {
             for (int i = length - 1; i > 0; i--) {
                 if (nums[i] < nums[i - 1]) break;
-                if(target == nums[0]) {
+                if(target == nums[i]) {
                     res = i;
                     break;
                 }

@@ -42,7 +42,6 @@ class ReentrantBlockingQueue<T> {
                     this.addLock.unlock();
                 }
             }
-            this.capacity--;
             return queue.poll();
         } finally {
             this.popLock.unlock();
@@ -56,8 +55,7 @@ class ReentrantBlockingQueue<T> {
                 this.addWaitCondition.wait();
             }
             queue.add(t);
-            this.capacity++;
-            if (this.capacity == 1) {
+            if (queue.size() == 1) {
                 try {
                     this.popLock.lock();
                     this.popWaitCondition.signalAll();

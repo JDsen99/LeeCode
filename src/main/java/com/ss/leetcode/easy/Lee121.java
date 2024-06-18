@@ -20,16 +20,16 @@ public class Lee121 {
         return dp[len - 1][0];
     }
 
-        public int maxProfit2(int[] prices) {
-            int minprice = Integer.MAX_VALUE;
-            int maxprofit = 0;
-            for (int i = 0; i < prices.length; i++) {
-                if (prices[i] < minprice) {
-                    minprice = prices[i];
-                } else if (prices[i] - minprice > maxprofit) {
-                    maxprofit = prices[i] - minprice;
-                }
+    public int maxProfit2(int[] prices) {
+        int minprice = Integer.MAX_VALUE;
+        int maxprofit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < minprice) {
+                minprice = prices[i];
+            } else if (prices[i] - minprice > maxprofit) {
+                maxprofit = prices[i] - minprice;
             }
-            return maxprofit;
         }
+        return maxprofit;
+    }
 }
